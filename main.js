@@ -1,14 +1,22 @@
-const frontend = document.querySelector(".frontend");
-const backend = document.querySelector(".backend");
+const container = document.querySelector("#image-holder");
+let target = 0;
+container.children[target].classList.toggle("display-block");
 
-frontend.addEventListener("mouseover", () => {
-  console.log("frontend here");
-  const h2 = frontend.firstElementChild;
-  h2.textContent = "Frontend skills";
-});
+function image() {
+  for (let i = 0; i < container.children.length; i++) {
+    container.children[i].addEventListener("click", callback);
+  }
+}
 
-backend.addEventListener("mouseover", () => {
-  console.log("backend here");
-  const h2 = backend.firstElementChild;
-  h2.textContent = "Backend skills";
-});
+function callback(e) {
+  console.log(e.target);
+  e.target.classList.toggle("display-block");
+  if (target === container.children.length - 1) {
+    target = 0;
+  } else {
+    target++;
+  }
+  container.children[target].classList.toggle("display-block");
+}
+
+image();
