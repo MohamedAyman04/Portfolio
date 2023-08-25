@@ -26,25 +26,26 @@ body header nav {
   position: fixed;
   width: 100%;
   background-color: #FAF0E6;
+  font-size: max(1em, 10px);
 }
 body header nav div {
   height: 5em;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(50px, 1fr));
+  display: flex;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 body header nav div p {
   font-size: 1.2em;
-  grid-area: 1/2/1/2;
 }
 body header nav div ul {
-  grid-area: 1/3/1/5;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 5em;
+  gap: max(5em, 10px);
 }
 body header nav div ul li {
   list-style: none;
@@ -89,6 +90,7 @@ body .blend div {
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.25em;
+  font-size: max(1em, 8px);
 }
 body .blend div .head-details h1 {
   font-size: 3.25em;
@@ -124,7 +126,7 @@ body .blend div .social a:hover {
 }
 body .blend img {
   border-radius: 2em;
-  width: 30em;
+  width: max(30em, 220px);
   grid-area: img;
   box-shadow: 4px 4px 13px 3px;
   animation: image-move 2s ease-in-out infinite alternate;
@@ -138,7 +140,7 @@ body .blend-2 {
 body .blend-2 h1 {
   grid-area: heading;
   color: #B9B4C7;
-  font-size: 3.25em;
+  font-size: max(3.25em, 20px);
   text-align: center;
   padding-top: 2em;
 }
@@ -156,14 +158,15 @@ body .blend-2 .container {
 body .blend-2 .container .card {
   display: flex;
   flex-direction: column;
-  width: 20em;
-  height: 30em;
+  width: max(20em, 150px);
+  height: max(30em, 200px);
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
   background-color: #FAF0E6;
   border-radius: 1em;
   transition: 0.3s ease-in-out;
+  font-size: max(1em, 9px);
 }
 body .blend-2 .container .card h2 {
   text-transform: capitalize;
@@ -214,7 +217,7 @@ body #skills {
 body #skills h1 {
   flex-grow: 0;
   color: #B9B4C7;
-  font-size: 3.25em;
+  font-size: max(3.25em, 20px);
   text-align: center;
   padding: 2em 0px 0.5em;
 }
@@ -237,6 +240,7 @@ body #skills .container .frontend {
   align-items: center;
   transition: 0.2s ease-in-out;
   border-right: 5px solid #FAF0E6;
+  font-size: max(1em, 10px);
 }
 body #skills .container .frontend .data {
   display: none;
@@ -278,6 +282,7 @@ body #skills .container .backend {
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-in-out;
+  font-size: max(1em, 10px);
 }
 body #skills .container .backend .data {
   display: none;
@@ -322,7 +327,7 @@ body #certificates {
 body #certificates h1 {
   flex-grow: 0;
   color: #B9B4C7;
-  font-size: 3.25em;
+  font-size: max(3.25em, 20px);
   text-align: center;
   padding-top: 2em;
 }
@@ -351,7 +356,7 @@ body #contact {
 }
 body #contact h1 {
   color: #B9B4C7;
-  font-size: 3.25em;
+  font-size: max(3.25em, 20px);
   text-align: center;
   padding-top: 2em;
   flex-grow: 0;
@@ -368,7 +373,7 @@ body #contact .touch {
 body #contact .touch h2 {
   text-align: center;
   color: #FAF0E6;
-  font-size: 2em;
+  font-size: max(2em, 13px);
 }
 body #contact .touch form {
   display: flex;
@@ -383,13 +388,15 @@ body #contact .touch form input {
   padding: 2em;
   color: #352F44;
   border-radius: 1em;
+  font-size: max(1em, 8px);
 }
 body #contact .touch form button {
   border-radius: 2em;
   padding: 1em;
   transition: 0.3s ease-in-out;
   cursor: pointer;
-  width: 10em;
+  width: max(10em, 40px);
+  font-size: max(1em, 10px);
 }
 body #contact .touch form button i {
   padding: 0 0.25em;
@@ -410,8 +417,8 @@ body #contact .trad a {
   text-decoration: none;
   transition: 0.3s ease-in-out;
   background-color: #FAF0E6;
-  width: 20em;
-  height: 10em;
+  width: max(20em, 100px);
+  height: max(10em, 50px);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -422,6 +429,7 @@ body #contact .trad a {
   border-radius: 2em;
   color: #352F44;
   cursor: pointer;
+  font-size: max(1em, 8px);
 }
 body #contact .trad a i {
   font-size: 1.5em;
@@ -430,7 +438,7 @@ body #contact .trad a:hover {
   transform: scale(1.1);
 }
 body footer {
-  height: 7em;
+  height: max(7em, 50px);
   background-color: #FAF0E6;
   color: #352F44;
   display: flex;
@@ -438,6 +446,7 @@ body footer {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
+  font-size: max(1em, 8px);
 }
 body footer p span {
   transition: 0.3s ease-in-out;
@@ -510,12 +519,12 @@ body footer .social a:hover {
 }
 @media (max-width: 900px) {
   body {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 @media (max-width: 800px) {
   body {
-    font-size: 8px;
+    font-size: 9px;
   }
 }
 @media (max-width: 700px) {
@@ -533,8 +542,19 @@ body footer .social a:hover {
     grid-template-areas: "text" "img";
   }
 }
+@media (max-width: 400px) {
+  body {
+    font-size: 4px;
+  }
+  body header nav div ul {
+    gap: 2em;
+  }
+}
 @media (max-width: 300px) {
   body {
     font-size: 3px;
+  }
+  body header nav div ul {
+    gap: 1em;
   }
 }
