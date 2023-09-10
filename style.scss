@@ -656,6 +656,14 @@ body {
             grid-template-areas:
                 "text"
                 "img";
+
+            div {
+                .head-details {
+                    p {
+                        width: 60ch;
+                    }
+                }
+            }
         }
     }
 }

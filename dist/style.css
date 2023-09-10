@@ -550,6 +550,9 @@ body footer .social a:hover {
   body .blend {
     grid-template-areas: "text" "img";
   }
+  body .blend div .head-details p {
+    width: 60ch;
+  }
 }
 @media (max-width: 400px) {
   body {
