@@ -1,22 +1,46 @@
-const container = document.querySelector("#image-holder");
-let target = 0;
-container.children[target].classList.toggle("display-block");
+const certificates = document.querySelectorAll("#certificate-slider img");
+const dotsContainer = document.getElementById("certificate-dots");
 
-function image() {
-  for (let i = 0; i < container.children.length; i++) {
-    container.children[i].addEventListener("click", callback);
-  }
+let currentIndex = 0;
+let slideInterval;
+
+function showCertificate(index) {
+  certificates.forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+    dotsContainer.children[i].classList.toggle("active", i === index);
+  });
+  currentIndex = index;
 }
 
-function callback(e) {
-  console.log(e.target);
-  e.target.classList.toggle("display-block");
-  if (target === container.children.length - 1) {
-    target = 0;
-  } else {
-    target++;
-  }
-  container.children[target].classList.toggle("display-block");
+function nextCertificate() {
+  let nextIndex = (currentIndex + 1) % certificates.length;
+  showCertificate(nextIndex);
 }
 
-image();
+function startAutoSlide() {
+  slideInterval = setInterval(nextCertificate, 4000);
+}
+
+function stopAutoSlide() {
+  clearInterval(slideInterval);
+}
+
+// Create dots dynamically based on images count
+function createDots() {
+  certificates.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.addEventListener("click", () => {
+      stopAutoSlide();
+      showCertificate(i);
+      startAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  });
+}
+
+// Init slider
+if (certificates.length && dotsContainer) {
+  createDots();
+  showCertificate(0);
+  startAutoSlide();
+}
